@@ -27,8 +27,9 @@ public class StudentController {
     public @ResponseBody String addStudents(@RequestParam String studentFname,
                                             @RequestParam String studentLname,
                                             @RequestParam String studentEmail,
-                                            @RequestParam String studentCourse){
-        return studentService.createStudent(studentFname, studentLname, studentEmail, studentCourse);
+                                            @RequestParam String studentCourse,
+                                            @RequestParam String studentGpa){
+        return studentService.createStudent(studentFname, studentLname, studentEmail, studentCourse, studentGpa);
 
     }
     @GetMapping(path = "/students")
@@ -53,6 +54,7 @@ public class StudentController {
         student.setStudentFname(studentEntity.getStudentFname());
         student.setStudentLname(studentEntity.getStudentLname());
         student.setStudentCourse(studentEntity.getStudentCourse());
+        student.setGpa(studentEntity.getGpa());
         return new ResponseEntity<>(studentRepository.save(student), HttpStatus.OK);
     }
 }

@@ -4,7 +4,6 @@ import com.example.springsecuritydemo.entity.StudentEntity;
 import com.example.springsecuritydemo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +15,15 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public String createStudent(String fname, String lname, String email, String course){
+    public String createStudent(String fname, String lname, String email, String course, String gpa){
         StudentEntity studentEntry = new StudentEntity();
 
         studentEntry.setStudentFname(fname);
         studentEntry.setStudentLname(lname);
         studentEntry.setStudentEmail(email);
         studentEntry.setStudentCourse(course);
+        studentEntry.setGpa(gpa);
+
         studentRepository.save(studentEntry);
 
         return "Details Saved!";

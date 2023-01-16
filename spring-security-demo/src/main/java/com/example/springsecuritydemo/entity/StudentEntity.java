@@ -4,7 +4,7 @@ package com.example.springsecuritydemo.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tblstudent")
+@Table(name = "student_tbl")
 public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,19 @@ public class StudentEntity {
 
     @Column(name = "student_course")
     private String studentCourse;
+
+    @Column(name = "gpa")
+    private String gpa;
+
+    public String getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(String gpa) {
+        this.gpa = gpa;
+    }
+
+
 
     public Long getId() {
         return id;
