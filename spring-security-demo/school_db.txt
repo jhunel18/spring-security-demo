@@ -7,4 +7,5 @@ CREATE TABLE student_tbl(
     student_lname varchar(255) NOT NULL,
     student_email varchar(255) NOT NULL,
     student_course varchar(255) NOT NULL,
-    gpa double precision NOT NULL);
+    gpa double precision NOT NULL
+    );
