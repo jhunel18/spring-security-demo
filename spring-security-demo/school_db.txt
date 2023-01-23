@@ -1,0 +1,10 @@
+
+CREATE DATABASE task_db;
+
+CREATE TABLE student_tbl(
+    id SERIAL PRIMARY KEY NOT NULL,
+	student_fname varchar(255) NOT NULL,
+    student_lname varchar(255) NOT NULL,
+    student_email varchar(255) NOT NULL,
+    student_course varchar(255) NOT NULL,
+    gpa double precision NOT NULL);

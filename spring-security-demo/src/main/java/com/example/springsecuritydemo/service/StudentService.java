@@ -37,4 +37,8 @@ public class StudentService {
     public ResponseEntity<List<StudentEntity>> getByid(Long id){
         return new ResponseEntity<>(studentRepository.findByid(id), HttpStatus.OK);
     }
+
+    public String updateStudent(){
+        return null;
+    }
 }

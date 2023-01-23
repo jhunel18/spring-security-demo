@@ -39,8 +39,10 @@ public class SecurityConfiguration {
                 .and()
                 .httpBasic()
                 .and()
+                .formLogin().disable()
                 .csrf().disable();
-        return http.build();
+
+                return http.build();
     }
     @Bean
     public PasswordEncoder passwordEncoder(){
