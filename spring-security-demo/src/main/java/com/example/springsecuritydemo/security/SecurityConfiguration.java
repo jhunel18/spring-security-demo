@@ -34,6 +34,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .requestMatchers("/api/student","/api/delete/**","/api/update/**").hasRole("ADMIN")
+                .requestMatchers("/api/student","/api/student/student_id").hasRole("USER")
                 .anyRequest()
                 .authenticated()
                 .and()
